@@ -1,12 +1,14 @@
 import { Routes } from '@angular/router';
 import { Landing } from './features/landing/landing/landing';
-import { Jobs } from './features/jobs/jobs/jobs';
-import { Login } from './features/auth/login/login';
+
 
 export const routes: Routes = [
   {path:'',component:Landing},
-  {path:'jobs',component:Jobs},
-  {path:'auth/login', component:Login},
-
+  {path:'jobs',
+    loadChildren:()=>import('./features/jobs/jobs.routes').then(w=>w.jobRoutes),
+  },
+  {path:'auth',
+    loadChildren:()=>import('./features/auth/auth.routes').then(w=>w.authRoutes),
+  },
   {path:'**',redirectTo:'',pathMatch:'full'}
 ];
