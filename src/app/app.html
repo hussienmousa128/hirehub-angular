@@ -1,6 +1,26 @@
-<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
-  <button mat-raised-button color="primary">
-    Material Button ✅
-  </button>
-</div>
+<mat-toolbar color="primary">
+  <span class="logo">HireHub</span>
 
+  <span class="spacer"></span>
+
+  <a
+    mat-button
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Home
+  </a>
+
+  <a mat-button routerLink="/jobs" routerLinkActive="active">
+    Jobs
+  </a>
+
+  <a mat-button routerLink="/auth/login" routerLinkActive="active">
+    Login
+  </a>
+</mat-toolbar>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

@@ -1,14 +1,18 @@
 import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { RouterOutlet } from "@angular/router";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 
 
 
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [MatSlideToggleModule, RouterOutlet,MatButtonModule],
+  imports: [ RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    MatToolbarModule,
+    MatButtonModule,],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
